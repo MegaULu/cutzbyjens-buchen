@@ -4,65 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cutz by Jens – Termin buchen</title>
-
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, Arial, sans-serif;
-      background: #0f0f14;
-      color: #f4f4f6;
+    :root{
+      --bg:#0f0f14; --card:#161622; --accent:#e6b86a; --text:#f4f4f6; --muted:#a9a9b2;
     }
-
-    header {
-      background: #161622;
-      padding: 16px;
-      text-align: center;
-      border-bottom: 1px solid #222;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 16px;
-    }
-
-    .card {
-      background: #161622;
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .info {
-      font-size: 14px;
-      color: #e6b86a;
-      margin-bottom: 12px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-    }
+    *{box-sizing:border-box;font-family:system-ui, Arial, sans-serif;}
+    body{margin:0;background:linear-gradient(120deg,#0b0b12,#141426), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1920&auto=format&fit=crop') center/cover fixed;color:var(--text);}
+    header{backdrop-filter:blur(6px);background:rgba(15,15,20,.7);border-bottom:1px solid #222;position:sticky;top:0;z-index:5;}
+    .wrap{max-width:1100px;margin:auto;padding:16px;}
+    h1{margin:6px 0;font-size:clamp(22px,4vw,32px);}
+    .tag{color:var(--accent);font-weight:600;}
+    .card{background:rgba(22,22,34,.9);border:1px solid #23233a;border-radius:14px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);margin-bottom:16px;}
+    .status{font-size:12px;margin-bottom:8px;}
+    .warn{color:#f39c12;}
+    iframe{width:100%;height:700px;border:none;}
   </style>
 </head>
-
 <body>
   <header>
-    <h1>Termin buchen</h1>
+    <div class="wrap">
+      <h1>Cutz by Jens</h1>
+      <div class="tag">Friseur · Haarschnitt</div>
+    </div>
   </header>
 
-  <main>
-    <div class="card">
-      <p class="info">
-        Nach Absenden der Buchung bestätigt Jens den Termin per WhatsApp.
-        Bitte komme nur nach Bestätigung.
+  <main class="wrap">
+    <section class="card">
+      <p class="status">
+        Preis: <b>5 €</b> · <span class="warn">Nach Absenden der Buchung wird Jens den Termin per WhatsApp bestätigen. Bitte komme nur nach Bestätigung.</span>
       </p>
+      <p class="status warn">Hinweis: Bei Absage am selben Tag fallen 2 € an.</p>
 
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLScxrv6z-FSMmhZ1eqsG7imsOHWvQoK97R52_L6LXKjcIfnuYg/viewform?embedded=true">
+      <!-- Google Form eingebettet -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScxrv6z-FSMmhZ1eqsG7imsOHWvQoK97R52_L6LXKjcIfnuYg/viewform?embedded=true">
+        Lade…
       </iframe>
-    </div>
+    </section>
+
+    <section class="card">
+      <h3>Öffnungszeiten</h3>
+      <p class="status">
+        Montag: 14:30–18:30<br>
+        Dienstag: 16:15–18:15<br>
+        Mittwoch: 14:15–17:15<br>
+        Donnerstag: 16:15–18:15<br>
+        Freitag: 14:30–18:30<br>
+        Samstag: 14:30–18:30<br>
+        Sonntag: 14:30–18:30
+      </p>
+      <p class="status">⏱ Zeitslots = 1 Stunde</p>
+    </section>
   </main>
 </body>
 </html>
-
